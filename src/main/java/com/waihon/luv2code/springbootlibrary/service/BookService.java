@@ -18,7 +18,7 @@ public class BookService {
 
     private CheckoutRepository checkoutRepository;
 
-    private BookService(BookRepository bookRepository, CheckoutRepository checkoutRepository) {
+    public BookService(BookRepository bookRepository, CheckoutRepository checkoutRepository) {
         this.bookRepository = bookRepository;
         this.checkoutRepository = checkoutRepository;
     }
