@@ -29,7 +29,8 @@ public class SecurityConfiguration {
                 configurer ->
                          configurer
                                  .requestMatchers("/api/books/secure/**",
-                                         "/api/reviews/secure/**").authenticated()
+                                         "/api/reviews/secure/**",
+                                         "/api/messages/secure/**").authenticated()
                                  .anyRequest().permitAll())
                 .oauth2ResourceServer(server ->
                         server.jwt(Customizer.withDefaults()));
