@@ -17,6 +17,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
     Review findByUserEmailAndBookId(String userEmail, Long bookId);
 
     @Modifying
-    @Query("delete from Review where book_id in :book_id")
-    void deleteAllByBookId(@Param("book_id") Long bookId);
+    // https://www.udemy.com/course/full-stack-react-and-java-spring-boot-the-developer-guide/learn/lecture/34852172#questions/21088422
+    @Query("delete from Review where bookId in :bookId")
+    void deleteAllByBookId(@Param("bookId") Long bookId);
 }
